@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Ther的小站
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
+author: Ther
+language: zh-CN
 timezone: ''
 
 # URL
@@ -109,16 +109,12 @@ deploy:
   branch: master
 
 algolia:
-  applicationID: 'YGMR4LH4DH'
+  appId: "YGMR4LH4DH"
   apiKey: '1fb48f3686d76eaf600890b7d3bb69c9'
-  indexName: 'hexo'
+  indexName: 'index_hexo'
+  adminApiKey: "a19395cb956782763ffd4b9d188d080a"
   chunkSize: 5000
   fields:
-    - content:strip:truncate,0,500
-    - excerpt:strip
-    - gallery
-    - permalink
-    - photos
-    - slug
-    - tags
+    - path
     - title
+    - content:strip
