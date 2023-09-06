@@ -105,7 +105,7 @@ plugins:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://gitee.com/Cjx_0723/cjx_0723.git
+  repo: git@github.com:CJ-xchina/CJ-xchina.github.io.git
   branch: master
 
 algolia:
