@@ -50,8 +50,6 @@ r
 Bsource/_posts/后端/Java开发/Java开发常用工具类汇总.md,0\b\0b74107f54c5e3ceb2d8e7d05c8a598f40ab3750
 i
 9source/_posts/后端/Java开发/SpringBoot参数接收.md,6\3\63c40603dd9a6aa7b0a04f58c4299fa8dd40aeb6
-u
-Esource/_posts/后端/Java开发/@Autowired注入static静态变量.md,7\c\7c5041192848bdf88ac7e07b4cd6192bf661a0ce
 l
 <source/_posts/后端/Java开发/idea多端口实例运行.md,e\0\e032baf70874b2d1c4602b6d3e7a2332003c72fd
 e
@@ -74,3 +72,9 @@ jsource/_posts/生活/考研复试/中科院软件所复试面试、笔试、口
 +source/_posts/生活/旅行/海南之旅.md,9\e\9e7903697295aa8d20c54e511bed461482ae8bac
 U
 %source/_posts/生活/游戏/原神.md,b\1\b1917f296b93abed395d9585c6cdfd35dcca9f6a
+;
+_config.yml,c\d\cd089ae45ce870c45e434019e8f1ed4f066cd425
+J
+.github/workflows/main.yml,c\7\c778226b6c4c0fb51cf7942c8ee1f3d9fc1249d0
+F
+.github/dependabot.yml,0\9\091aff741808a09242f252264b14f4a9adaa5305
