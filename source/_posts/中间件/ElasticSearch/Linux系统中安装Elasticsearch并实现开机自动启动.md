@@ -1,7 +1,8 @@
 ---
 title: Linux系统中安装Elasticsearch并实现开机自动启动
 date: 2023年5月15日16:26:51
-tags: ElasticSearch,数据库
+tags: 
+    - ElasticSearch
 categories: 中间件
 keywords:
 description: 

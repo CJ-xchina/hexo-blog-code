@@ -1,7 +1,8 @@
 ---
 title: MySQL教程（二）—— 概述和SQL语法
 date: 2023年5月15日16:20:36
-tags: MySQL,数据库
+tags: 
+    - MySQL
 categories: 中间件
 keywords:
 description: 
