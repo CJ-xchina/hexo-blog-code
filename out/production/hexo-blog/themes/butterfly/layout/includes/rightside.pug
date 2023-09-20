@@ -28,16 +28,16 @@ mixin rightsideItem(array)
             i.fas.fa-sms
       when 'comment'
         if commentsJsLoad
-          a#to_comment(href="#post-comment" title=_p("rightside.scroll_to_comment"))
+          a#to_comment(href="#post-comment" title=_p("rightside.readmode_title"))
             i.fas.fa-comments
       when 'newTool'
         //- Customize the new tool button here
-        button#new_tool(type="button" title=_p("rightside.new_tool"))
-          i.fas.fa-tool
+        button#readmode(type="button" title=_p('rightside.readmode_title'))
+          i.fas.fa-book-open
 
 #rightside
   - const { enable, hide, show } = theme.rightside_item_order
-  - const hideArray = enable ? hide && hide.split(',') : ['readmode','translate','darkmode','hideAside']
+  - const hideArray = enable ? hide && hide.split(',') : ['readmode','translate','darkmode','hideAside', 'newTool']
   - const showArray = enable ? show && show.split(',') : ['toc','chat','comment']
 
   #rightside-config-hide
