@@ -4,7 +4,8 @@ block content
   #post
     if top_img === false
       include includes/header/post-info.pug
-
+    div(style="text-align: center")
+      a(href=`https://github.com/CJ-xchina/hexo-blog-code/tree/master/source/${page.source}`, target="_blank") 编辑文章✏
     article#article-container.post-content!=page.content
     div(style="text-align: center")
       a(href=`https://github.com/CJ-xchina/hexo-blog-code/tree/master/source/${page.source}`, target="_blank") 编辑文章✏
