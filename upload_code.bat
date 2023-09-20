@@ -3,8 +3,6 @@
 setlocal
 
 REM 设置变量
-set GITHUB_USERNAME=CJ-xchina
-set GITHUB_PASSWORD=cjxcjxcjx105188
 set REPO_OWNER=CJ-xchina
 set REPO_NAME=hexo-blog-code
 set COMMIT_MESSAGE=Initial commit
