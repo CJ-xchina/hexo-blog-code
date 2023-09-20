@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/hexo-theme-butterfly" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/source/_posts/他人笔记/技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/butterfly" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/hexo-theme-butterfly" vcs="Git" />
+  </component>
+</project>
