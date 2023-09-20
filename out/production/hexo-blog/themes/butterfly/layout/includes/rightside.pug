@@ -6,6 +6,7 @@ mixin rightsideItem(array)
           button#readmode(type="button" title=_p('rightside.readmode_title'))
             i.fas.fa-book-open
       when 'translate'
+        if translate.enable
           button#translateLink(type="button" title=_p('rightside.translate_title'))= translate.default
       when 'darkmode'
         if darkmode.enable && darkmode.button
@@ -21,11 +22,11 @@ mixin rightsideItem(array)
             i.fas.fa-list-ul
       when 'chat'
         if chat_btn
-          button#chat_btn(type="button" title=_p("rightside.chat"))
+          button#chat-btn(type="button" title=_p("rightside.chat"))
             i.fas.fa-sms
       when 'comment'
         if commentsJsLoad
-          a#to_comment(href="#post-comment" title=_p("rightside.readmode_title"))
+          a#to_comment(href="#post-comment" title=_p("rightside.scroll_to_comment"))
             i.fas.fa-comments
       when 'newTool'
         //- Customize the new tool button here
