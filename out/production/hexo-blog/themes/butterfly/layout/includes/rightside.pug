@@ -1,5 +1,3 @@
-- const { readmode, translate, darkmode, aside, chat_btn, newTool } = theme
-
 mixin rightsideItem(array)
   each item in array
     case item
@@ -32,8 +30,8 @@ mixin rightsideItem(array)
             i.fas.fa-comments
       when 'newTool'
         //- Customize the new tool button here
-        button#readmode(type="button" title=_p('rightside.readmode_title'))
-          i.fas.fa-book-open
+        a#editLink(href=`https://github.com/CJ-xchina/hexo-blog-code/tree/master/source/${page.source}`, target="_blank" title=_p("rightside.edit_article"))
+          i.fas.fa-edit
 
 #rightside
   - const { enable, hide, show } = theme.rightside_item_order
