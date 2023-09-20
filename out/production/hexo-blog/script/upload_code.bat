@@ -17,6 +17,10 @@ REM 提交到本地仓库
 echo Committing changes to local repository...
 git commit -m "%COMMIT_MESSAGE%"
 
+REM 拉取远程代码
+echo Pulling changes from GitHub...
+git pull origin master
+
 REM 添加远程仓库
 echo Adding remote repository...
 git remote add origin https://github.com/CJ-xchina/hexo-blog-code.git
