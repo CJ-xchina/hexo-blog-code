@@ -61,5 +61,3 @@ U
 %source/_posts/生活/游戏/原神.md,b\1\b1917f296b93abed395d9585c6cdfd35dcca9f6a
 v
 Fsource/_posts/前沿技术/机器学习/吴恩达机器学习笔记.md,d\1\d127fa5212a951d2098033d2b29e73db43eb2fc9
-;
-_config.yml,c\d\cd089ae45ce870c45e434019e8f1ed4f066cd425
