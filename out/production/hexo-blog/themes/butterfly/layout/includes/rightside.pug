@@ -30,8 +30,8 @@ mixin rightsideItem(array)
             i.fas.fa-comments
       when 'newTool'
         //- Customize the new tool button here
-        a#editLink(href=`https://github.com/CJ-xchina/hexo-blog-code/tree/master/source/${page.source}`, target="_blank" title=_p("rightside.edit_article"))
-          i.fas.fa-edit
+        a#to_comment(href=`https://github.com/CJ-xchina/hexo-blog-code/tree/master/source/${page.source}`, target="_blank" title=_p("编辑"))
+          i.fas.fa-comments
 
 #rightside
   - const { enable, hide, show } = theme.rightside_item_order
