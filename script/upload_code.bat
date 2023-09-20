@@ -30,4 +30,4 @@ echo Cleaning up...
 git remote remove origin
 git reset
 
-echo GitHub Code上传完毕！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ >> log.txt
+echo GitHub Code上传完毕！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！hao123 >> log.txt
