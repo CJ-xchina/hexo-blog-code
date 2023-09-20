@@ -29,3 +29,5 @@ REM 清理临时文件
 echo Cleaning up...
 git remote remove origin
 git reset
+
+echo 上传完毕！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
