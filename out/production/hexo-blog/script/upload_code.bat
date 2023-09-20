@@ -25,9 +25,4 @@ REM 推送到GitHub
 echo Pushing changes to GitHub...
 git push --set-upstream origin master
 
-REM 清理临时文件
-echo Cleaning up...
-git remote remove origin
-git reset
-
 echo GitHub Code上传完毕！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！hao123 >> log.txt
