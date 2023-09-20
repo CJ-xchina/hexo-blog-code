@@ -1,14 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-  <div style="text-align: center; background-color: #f2f2f2; padding: 10px; border-radius: 5px;">
-    <a href="https://github.com/CJ-xchina/hexo-blog-code/tree/master/source/${page.source}" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #fff; border-radius: 5px; text-decoration: none; transition: background-color 0.3s, color 0.3s, font-size 0.3s;">
-      编辑文章✏
-    </a>
-  </div>
-</head>
-<body>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+    <button class="css-button-retro--green" onclick="window.location.href='https://www.baidu.com';">
+      编辑文章
+    </button>
+  </head>
+  <body>
 
-</body>
-</html>
+  </body>
+  </html>
+
+  <style>
+    .css-button-retro--green {
+      min-width: 130px;
+      height: 40px;
+      color: #fff;
+      padding: 5px 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+      outline: none;
+      border: 1px solid #000;
+      color: #000;
+      background: transparent;
+      z-index: 0;
+    }
+    .css-button-retro--green:hover:after {
+      top: 0;
+      left: 0;
+    }
+    .css-button-retro--green:after {
+      content: "";
+      width: 100%;
+      z-index: -1;
+      position: absolute;
+      height: 100%;
+      top: 5px;
+      left: 5px;
+      transition: 0.2s;
+      background-color: #80ed99;
+    }
+  </style>
