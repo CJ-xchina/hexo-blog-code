@@ -21,7 +21,7 @@ git commit -m "%COMMIT_MESSAGE%"
 
 REM 添加远程仓库
 echo Adding remote repository...
-git remote add origin https://github.com/%REPO_OWNER%/%REPO_NAME%.git
+git remote add origin https://github.com/CJ-xchina/hexo-blog-code.git
 
 REM 推送到GitHub
 echo Pushing changes to GitHub...
