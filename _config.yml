@@ -118,3 +118,17 @@ algolia:
     - path
     - title
     - content:strip
+
+algolia_search:
+  enable: true
+  hits:
+    per_page: 8
+
+# PS:完整配置参考如下所示，butterfly摘取了核心的配置内容并将部分参数在国际化部分做了处理以适配不同的语言配置，如有需要在不变动原有butterfly提供的参数配置基础上，可以进入到指定的themes/butterfly/languages对相应语言配置进行调整
+search:
+  title: 搜索
+  load_data: 数据库加载中
+  algolia_search:
+    input_placeholder: 搜索文章
+    hits_empty: '找不到您查询的内容：${query}'
+    hits_stats: '找到 ${hits} 条结果，用时 ${time} 毫秒'
