@@ -29,4 +29,5 @@ REM 推送到GitHub
 echo Pushing changes to GitHub...
 git push --set-upstream origin master
 
+cd script
 echo GitHub Code上传完毕！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！hao123 >> %LOG_FILE%
