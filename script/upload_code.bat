@@ -4,7 +4,7 @@ setlocal
 cd ../
 REM 设置变量
 set COMMIT_MESSAGE=Initial commit
-
+set LOG_FILE=log.txt
 REM 初始化仓库
 echo Initializing repository...
 git init
@@ -29,4 +29,4 @@ REM 推送到GitHub
 echo Pushing changes to GitHub...
 git push --set-upstream origin master
 
-echo GitHub Code上传完毕！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！hao123 >> log.txt
+echo GitHub Code上传完毕！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！hao123 >> %LOG_FILE%
