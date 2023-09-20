@@ -6,7 +6,6 @@ mixin rightsideItem(array)
           button#readmode(type="button" title=_p('rightside.readmode_title'))
             i.fas.fa-book-open
       when 'translate'
-        if translate.enable
           button#translateLink(type="button" title=_p('rightside.translate_title'))= translate.default
       when 'darkmode'
         if darkmode.enable && darkmode.button
