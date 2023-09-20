@@ -3,7 +3,6 @@
 # --------------------------------------
 
 menu:
-  搜索: / || fas fa-search
   首页: / || fas fa-home
   时间轴: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
@@ -14,6 +13,7 @@ menu:
     电影: /movies/ || fas fa-video
   友链: /link/ || fas fa-link
   关于: /about/ || fas fa-heart
+
 
 nav:
   logo: # image
