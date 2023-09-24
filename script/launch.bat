@@ -1,8 +1,10 @@
 @echo off
 
 chcp 65001 > nul
+cd D:\MY_FILES\Project\hexo-blog\script
 
 set LOG_FILE=log.txt
+
 for /f "tokens=1-6 delims=/: " %%a in ("%DATE% %TIME%") do (
     set TIMESTAMP=%%b年-%%c月-%%d日-%%a %%e：%%f
 )
