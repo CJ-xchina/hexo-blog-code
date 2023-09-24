@@ -7,7 +7,7 @@ for /f "tokens=1-6 delims=/: " %%a in ("%DATE% %TIME%") do (
     set TIMESTAMP=%%b年-%%c月-%%d日-%%a %%e：%%f
 )
 
-for /L %%i in (1,1,31) do (
+for /L %%i in (1,1,2) do (
     call upload_code.bat
 )
 
