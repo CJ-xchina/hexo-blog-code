@@ -12,5 +12,7 @@ for /f "tokens=1-6 delims=/: " %%a in ("%DATE% %TIME%") do (
 )
 echo "branch" not found in the file.
 echo [%TIMESTAMP%] 程序出现问题！！！！！！！！！！！ >> %LOG_FILE%
+echo FATAL: Something's wrong. Please check the program.
+msg * FATAL: Something's wrong. Please check the program.
 
 del temp.txt
