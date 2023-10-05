@@ -5,29 +5,13 @@ chcp 65001
 rem ----延时执行----
 @echo off
 f:
-
-rem ----邮件主题----
-set s="Hexo 笔记上传出错"
-rem ----邮件内容-----
-set body='hao123'
-rem ----收件邮箱-----
-set t=1484895345@qq.com
-rem ----发件邮箱-----
-set f=13107143299@163.com
-rem ----邮箱秘钥-----
-set pw=KXQPCRAIVTLEGSMZ
-rem ----执行发送-----
-
-@echo off
-chcp 65001
-
 rem ----延时执行----
 ping -n 5 127.0.0. 1> nul
 
 rem ----邮件主题----
 set s="Hexo 笔记上传出错"
 rem ----邮件内容-----
-set body=temp.txt
+set body=a
 rem ----收件邮箱-----
 set t=cuijiexiang23@mails.ucas.ac.cn
 rem ----发件邮箱-----
@@ -36,5 +20,5 @@ rem ----邮箱秘钥-----
 set pw=KXQPCRAIVTLEGSMZ
 rem ----执行发送-----
 
-blat -body "%body%" -s %s% -t %t% -base64 -charset Gb2312 -server smtp.163.com -f %f% -u %f% -pw %pw%
+blat -body %body% -s %s% -t %t% -base64 -charset Gb2312 -server smtp.163.com -f %f% -u %f% -pw %pw%
 ::pause
