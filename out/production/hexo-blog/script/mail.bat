@@ -1,7 +1,7 @@
 ::chcp 65001 设置编码，防止中文乱码
 ::最后加入 pause 可显示窗口用于排查问题，可删除
 chcp 65001
-
+setlocal enabledelayedexpansion
 rem ----延时执行----
 @echo off
 f:
@@ -11,11 +11,9 @@ ping -n 5 127.0.0. 1> nul
 rem ----邮件主题----
 set s="Hexo 笔记上传出错"
 rem ----邮件内容-----
+
 set body=
- rem 读取temp.txt内容,追加到body变量
-for /f "delims=" %%i in (temp.txt) do (
-  echo %%i >> %body%
-)
+for /f "tokens=* delims=" %%i in (temp.txt) do set body=!body! %%i
 rem ----收件邮箱-----
 set t=cuijiexiang23@mails.ucas.ac.cn
 rem ----发件邮箱-----
