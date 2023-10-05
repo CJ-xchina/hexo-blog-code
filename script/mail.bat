@@ -9,7 +9,7 @@ f:
 rem ----邮件主题----
 set s="Hexo 笔记上传出错"
 rem ----邮件内容-----
-set body=temp.txt
+set body='hao123'
 rem ----收件邮箱-----
 set t=1484895345@qq.com
 rem ----发件邮箱-----
