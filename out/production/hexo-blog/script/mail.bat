@@ -11,7 +11,11 @@ ping -n 5 127.0.0. 1> nul
 rem ----邮件主题----
 set s="Hexo 笔记上传出错"
 rem ----邮件内容-----
-set body=a
+set body=
+ rem 读取temp.txt内容,追加到body变量
+for /f "delims=" %%i in (temp.txt) do (
+  echo %%i >> %body%
+)
 rem ----收件邮箱-----
 set t=cuijiexiang23@mails.ucas.ac.cn
 rem ----发件邮箱-----
@@ -20,5 +24,5 @@ rem ----邮箱秘钥-----
 set pw=KXQPCRAIVTLEGSMZ
 rem ----执行发送-----
 
-blat -body %body% -s %s% -t %t% -base64 -charset Gb2312 -server smtp.163.com -f %f% -u %f% -pw %pw%
+blat -body %body% -s %s% -t %t%  -charset Gb2312 -server smtp.163.com -f %f% -u %f% -pw %pw%
 ::pause
