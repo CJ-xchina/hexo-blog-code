@@ -1,14 +1,40 @@
+::chcp 65001 设置编码，防止中文乱码
+::最后加入 pause 可显示窗口用于排查问题，可删除
+chcp 65001
+
+rem ----延时执行----
 @echo off
-:::::::::::::: 参数设置::::::::::::::
-set from=1484895345@qq.com
-set user=cuijiexiang
-set pass=cuijiexiang0723
-set to=cuijiexiang23@mails.ucas.ac.cn
-set subj=测试
-set mail=body.txt
-set attach=*.jpg
-set server=smtp.qq.com
-set debug=-debug -log blat.log -timestamp
-::::::::::::::::: 运行blat :::::::::::::::::
-blat %mail% -to %to% -base64 -charset Gb2312 -subject %subj% -attach %attach% -server %server% -f %from% -u %user% -pw %pass% ％ｄｅｂｅｇ％（此处的％ｄｅｂｅｇ％因为博客显示异常，使用了全角）
-—
+f:
+
+rem ----邮件主题----
+set s="Hexo 笔记上传出错"
+rem ----邮件内容-----
+set body=temp.txt
+rem ----收件邮箱-----
+set t=1484895345@qq.com
+rem ----发件邮箱-----
+set f=13107143299@163.com
+rem ----邮箱秘钥-----
+set pw=KXQPCRAIVTLEGSMZ
+rem ----执行发送-----
+
+@echo off
+chcp 65001
+
+rem ----延时执行----
+ping -n 5 127.0.0. 1> nul
+
+rem ----邮件主题----
+set s="Hexo 笔记上传出错"
+rem ----邮件内容-----
+set body=temp.txt
+rem ----收件邮箱-----
+set t=cuijiexiang23@mails.ucas.ac.cn
+rem ----发件邮箱-----
+set f=13107143299@163.com
+rem ----邮箱秘钥-----
+set pw=KXQPCRAIVTLEGSMZ
+rem ----执行发送-----
+
+blat -body "%body%" -s %s% -t %t% -base64 -charset Gb2312 -server smtp.163.com -f %f% -u %f% -pw %pw%
+::pause
