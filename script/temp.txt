@@ -1,11 +1,11 @@
 [32mINFO [39m Validating config
 [32mINFO [39m 
   ===================================================================
-
-[32mINFO [39m Clearing .deploy_git folder...
-[32mINFO [39m Copying files from public folder...
-[32mINFO [39m Copying files from extend dirs...
-[master ec4dc5ca] Site updated: 2023-10-05 21:24:34
- 61 files changed, 124 insertions(+), 124 deletions(-)
-branch 'master' set up to track 'git@github.com:CJ-xchina/CJ-xchina.github.io.git/master'.
-[32mINFO [39m Deploy done: [35mgit[39m
+      #####  #    # ##### ##### ###### #####  ###### #      #   #
+      #    # #    #   #     #   #      #    # #      #       # #
+      #####  #    #   #     #   #####  #    # #####  #        #
+      #    # #    #   #     #   #      #####  #      #        #
+      #    # #    #   #     #   #      #   #  #      #        #
+      #####   ####    #     #   ###### #    # #      ######   #
+                            4.7.0
+  ===================================================================
