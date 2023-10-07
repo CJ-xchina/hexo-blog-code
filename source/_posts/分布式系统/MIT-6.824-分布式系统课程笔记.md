@@ -129,7 +129,7 @@ MapReduce 是一个在多台机器上并行计算大规模数据的软件架构�
 
 ###  **4.1、工作流**  
 
-![img](https://pic2.zhimg.com/80/v2-246b7bebdd8b5c7b7eec10cdc46e3819_720w.webp)
+![image-20231007131319155](https://typora-md-bucket.oss-cn-beijing.aliyuncs.com/image-20231007131319155.png)
 
 MapReduce 的工作流：
 
