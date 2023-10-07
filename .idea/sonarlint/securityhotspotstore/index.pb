@@ -19,19 +19,3 @@ L
 themes/butterfly/_config.yml,4\1\410562d1628f894f701a33670711d944009604ee
 \
 ,themes/butterfly/source/js/search/algolia.js,9\7\9752f66ae72ab9ff4b330a3668b953beee404088
-@
-script/local.bat,c\f\cfdbe786c6f1f6e9cea4503c2dd2fd9eedbcbc9b
-F
-script/upload_code.bat,9\4\94451ddf07fa5b27dcd05433e29eff6335fc2d72
-A
-script/detect.bat,7\8\7836483ecd6deada628d09f16ee406be8a8a8947
-A
-script/launch.bat,4\9\49eebd2d7280e8638b5b02e416d8279e0c1fbdb1
-@
-script/blatdll.h,8\3\8333623c1b041b269a412e0a7547a28b1e69c960
->
-script/log.txt,3\e\3eef8c2cfcfb6f50b8d3e9731e835ec9f9086e65
-?
-script/temp.txt,5\e\5ed98a5fd37c38b28495c896fc587f2bedf01c54
-?
-script/mail.bat,e\4\e4ee84364a1c6f896ef6c2ae683fc7bbf06c8fda
