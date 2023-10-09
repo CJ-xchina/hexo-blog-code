@@ -19,3 +19,5 @@ L
 themes/butterfly/_config.yml,4\1\410562d1628f894f701a33670711d944009604ee
 \
 ,themes/butterfly/source/js/search/algolia.js,9\7\9752f66ae72ab9ff4b330a3668b953beee404088
+@
+script/test.html,9\3\935a4f1417ed5e8ce41604d2e78a4e7ecc4f4507

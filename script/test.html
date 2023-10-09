@@ -1,0 +1,77 @@
+<html style="background-color=#333333;">
+</hr>
+<table border="1">
+
+    <h2 style="color:  #E65100; background-color:  #FFF8E1;">(${topItem.getField("date")})
+        ${topItem.getField("title")}</h2>
+
+    <tr>
+        <td><b>期刊: <b style="color:#FF0000">${topItem.getField('publicationTitle')}</b></b>（发表日期: <b>${topItem.getField("date")}</b>）<br><b>作者:</b>
+            ${topItem.getCreators().map((v)=>v.firstName+" "+v.lastName).join("; ")}
+        </td>
+    </tr>
+    <tr>
+        <td><b>DOI : </b>
+            <a href="https://doi.org/${topItem.getField('DOI')}">${topItem.getField('DOI')}</a>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td><b>摘要: </b><i>${topItem.getField('abstractNote')}</i></td>
+    </tr>
+
+    <tr>
+        <td><b>期刊分区: </b>
+            <!-- 下面这块是zotero6版本的代码 -->
+            <!-- 引用了zotero style插件的标签，请提前安装，否则找不到分区 -->
+            ${(() => {let space = " ㅤㅤ ㅤㅤ"
+            return
+            Array.prototype.map.call(Zotero.ZoteroStyle.data.ztoolkit.ItemTree.globalCache.renderCellHooks.PublicationTags(
+            0,
+            Zotero.ZoteroStyle.data.ztoolkit.ItemTree.fieldHooks.globalCache.getFieldHooks.PublicationTags(
+            "", true, true,
+            topItem, undefined)
+            ).childNodes,
+            e => {
+            e.innerText = space + space + e.innerText + space + space;
+            return e.outerHTML
+            }).join(space)
+            })()
+            }
+        </td>
+
+    </tr>
+
+    <tr>
+        <td><b>原文PDF链接: </b>
+            <!-- 下面这块是zotero6版本的代码 -->
+            <!-- 前提是有pdf附件，否则也找不到 -->
+            <a href=zotero://open-pdf/0_${Zotero.Items.get(topItem.getAttachments()).filter((i) =>
+            i.isPDFAttachment())[0].key}>${Zotero.Items.get(topItem.getAttachments()).filter((i)=>
+            i.isPDFAttachment())[0].getFilename()}
+            </a>
+        </td>
+    </tr>
+
+    <tr>
+        <td><b>笔记创建日期: </b>${new Date().toLocaleString()}</td>
+    </tr>
+
+</table>
+<!-- Tips不想要可以自行删掉 -->
+<h3>💡创新点</h3>
+<blockquote>Tips: 本文提出了什么<u>新的科学问题</u>，提出了什么<u>新的研究思路</u>，或提出了什么<u>新的研究工具</u>？
+</blockquote>
+<h3>📚前言及文献综述</h3>
+<blockquote>Tips: 本研究的<u>必要性、紧迫性、可行性</u>是什么？作者是如何论述的？<br>作者引用了哪些该领域的<u>开创性文献</u>？
+</blockquote>
+<h3>🧩数据</h3>
+<h3>🔬方法</h3>
+<h3>📜结论</h3>
+<h3>🤔思考</h3>
+<blockquote>Tips:
+    本文有什么<u>优缺点</u>？你是否对某些内容产生了<u>疑问</u>？<br>你是否认为某些研究方式可以改进，<u>如何改进</u>？
+</blockquote>
+
+</html>
