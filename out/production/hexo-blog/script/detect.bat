@@ -10,6 +10,9 @@ set LOG_FILE=log.txt
 for /f "tokens=1-6 delims=/: " %%a in ("%DATE% %TIME%") do (
     set TIMESTAMP=%%b年-%%c月-%%d日-%%a  %%e：%%f
 )
-echo "branch" not found in the file.
-echo [%TIMESTAMP%] 程序出现问题！！！！！！！！！！！ >> %LOG_FILE%
-call mail.bat
+
+findstr /C:"FATAL" %FILE_PATH% > nul
+if %ERRORLEVEL% equ 0 (
+    echo [%TIMESTAMP%] 程序出现问题！！！！！！！！！！！ >> %LOG_FILE%
+    call mail.bat
+)
