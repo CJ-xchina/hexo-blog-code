@@ -98,14 +98,14 @@ favicon: /img/favicon.png
 
 # Avatar (頭像)
 avatar:
-  img: https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
+  img: https://i1.hdslb.com/bfs/face/b6bef67834c33bc7d386fb03a6dbc6db7966102e.jpg@240w_240h_1c_1s_!web-avatar-nav.avif
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: img/wallhaven-d6o77l.jpg
+index_img: https://typora-md-bucket.oss-cn-beijing.aliyuncs.com/20231011172553.png
 
 # If the banner of page not setting, it will show the top_img
 default_top_img:

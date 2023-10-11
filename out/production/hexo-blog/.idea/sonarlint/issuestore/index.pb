@@ -15,7 +15,5 @@ D
 0themes/butterfly/source/css/_search/algolia.styl,d\a\da46e5a1219564c9aa31e314af5e0f7b682323a5
 ?
 themes/.gitkeep,b\e\bec246f9dd09f068f8ed1b6942e04d3e3e099edd
-L
-themes/butterfly/_config.yml,4\1\410562d1628f894f701a33670711d944009604ee
 \
 ,themes/butterfly/source/js/search/algolia.js,9\7\9752f66ae72ab9ff4b330a3668b953beee404088
