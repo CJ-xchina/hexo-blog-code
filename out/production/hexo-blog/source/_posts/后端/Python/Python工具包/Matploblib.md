@@ -29,8 +29,6 @@ aside:
 
 <meta name="referrer" content="no-referrer"/>
 
-## 
-
 ## 一、初识Matploblib
 
 Matplotlib是Python中的绘图库，类似于MATLAB，可以用来绘制各种静态，动态，交互式的图表。
