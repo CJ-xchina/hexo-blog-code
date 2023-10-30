@@ -108,6 +108,7 @@ deploy:
   repo: git@github.com:CJ-xchina/CJ-xchina.github.io.git
   branch: master
 
+
 algolia:
   appId: "YGMR4LH4DH"
   apiKey: '1fb48f3686d76eaf600890b7d3bb69c9'
