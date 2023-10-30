@@ -1572,6 +1572,261 @@ print_globvar()       # 输出 1，函数内的 globvar 已经是全局变量
 
 2、一个global语句可以同时定义多个变量，如 global x, y, z。
 
+
+
+## 模块导入
+
+### 系统自带的模块
+
+以正则表达式模块为例，我们经常这样写代码：
+
+```py
+import re
+ 
+target = 'abc1234xyz'
+re.search('(\d+)', target)
+```
+
+但有时候，你可能会看到某些人这样写代码：
+
+```py
+from re import search
+
+target = 'abc1234xyz'
+search('(\d+)', target)
+```
+
+那么这两种导入方式有什么区别呢？
+
+我们分别使用`type`函数来看看他们的类型：
+
+```py
+>>> import re
+>>> type(re)
+<class 'module'>
+>>> from re import search
+>>> type(search)
+<class 'function'>
+```
+
+如下图所示：
+
+![img](https://kingname-1257411235.cos.ap-chengdu.myqcloud.com/2019-12-28-13-30-59.png)
+
+可以看到，直接使用`import re`导入的`re`它是一个`module`类，也就是模块。我们把它成为`正则表达式模块`。而当我们`from re import search`时，这个`search`是一个`function`类，我们称呼它为`search 函数`。
+
+一个模块里面可以包含多个函数。
+
+如果在你的代码里面，你已经确定只使用`search`函数，不会再使用正则表达式里面的其他函数了，那么你使用两种方法都可以，没什么区别。
+
+但是，如果你要使用正则表达式下面的多个函数，或者是一些常量，那么用第一种方案会更加简洁清晰。
+
+例如：
+
+```py
+import re
+ 
+re.search('c(.*?)x', flags=re.S)
+re.sub('[a-zA-Z0-9]', '***', target, flags=re.I)
+
+```
+
+在这个例子中，你分别使用了`re.search`，`re.sub`，`re.S`和`re.I`。后两者是常量，用于忽略换行符和大小写。
+
+但是，如果你使用`from re import search, sub, S, I`来写代码，那么代码就会变成这样：
+
+```py
+import re
+ 
+search('c(.*?)x', flags=S)
+sub('[a-zA-Z0-9]', '***', target, flags=I)
+```
+
+看起来虽然简洁了，但是，一旦你的代码行数多了以后，你很容易忘记`S`和`I`这两个变量是什么东西。而且我们自己定义的函数，也很有可能取名为`sub`或者`search`，从而覆盖正则表达式模块下面的这两个同名函数。这就会导致很多难以觉察的潜在 bug。
+
+再举一个例子。Python 的 `datetime`模块，我们可以直接`import datetime`，此时我们导入的是一个`datetime`模块，如下图所示：
+
+![img](https://kingname-1257411235.cos.ap-chengdu.myqcloud.com/2019-12-28-13-43-21.png)
+
+但是如果你写为`from datetime import datetime`，那么你导入的`datetime`是一个`type`类：
+
+![img](https://kingname-1257411235.cos.ap-chengdu.myqcloud.com/2019-12-28-13-45-07.png)
+
+因为这种方式导入的`datetime`，它就是Python 中的一种类型，用于表示包含日期和时间的数据。
+
+这两种导入方式导入的`datetime`，虽然名字一样，但是他们的意义完全不一样，请大家观察下面两种写法：
+
+```py
+import datetime
+ 
+now = datetime.datetime.now()
+one_hour_ago = now - datetime.timedelta(hours=1)
+```
+
+```py
+from datetime import datetime, timedelta
+
+now = datetime.now()
+one_hour_ago = now - timedelta(hours=1)
+```
+
+第二种写法看似简单，但实则改动起来却更为麻烦。例如我还需要增加一个变量`today`用于记录今日的日期。
+
+对于第一段代码，我们只需要增加一行即可：
+
+`today = datetime.date.today()`
+
+但对于第二行来说，我们需要首先修改导入部分的代码：
+
+`from datetime import datetime, timedelta, date`
+
+然后才能改代码：`today = date.today()`
+
+这样一来你就要修改两个地方，反倒增加了负担。
+
+### 第三方库
+
+在使用某些第三方库的代码里面，我们会看到类似这样的写法：
+
+```py
+from lxml.html import fromstring
+ 
+selector = fromstring(HTML)
+```
+
+但是我们还可以写为：
+
+```py
+from lxml import html
+ 
+selector = html.fromstring(HTML)
+```
+
+但是，下面这种写法会导致报错：
+
+```py
+import lxml
+selector = lxml.html.fromstring(HTML)
+```
+
+那么这里的`lxml.html`又是什么东西呢？
+
+这种情况多常见于一些特别大型的第三方库中，这种库能处理多种类型的数据。例如`lxml`它既能处理`xml`的数据，又能处理`html`的数据，于是这种库会划分子模块，`lxml.html`模块专门负责`html`相关的数据。
+
+### 自己来实现多种导入方法
+
+我们现在自己来写代码，实现这多种导入方法。
+
+我们创建一个文件夹`DocParser`，在里面分别创建两个文件`main.py`和`util.py`，他们的内容如下：
+
+`util.py`文件:
+
+```py
+def write():
+print('write 函数被调用！')
+```
+
+`main.py`文件：
+
+```py
+import util
+ 
+util.write()
+```
+
+运行效果如下图所示：
+
+![img](https://kingname-1257411235.cos.ap-chengdu.myqcloud.com/2019-12-28-14-06-29.png)
+
+现在我们把`main.py`的导入方式修改一下：
+
+```py
+from util import write
+ 
+write()
+```
+
+依然正常运行，如下图所示
+
+![img](https://kingname-1257411235.cos.ap-chengdu.myqcloud.com/2019-12-28-14-07-21.png)
+
+> 当两个文件在同一个文件夹下面，并且该文件夹里面没有**init**.py 文件时，两种导入方式等价。
+
+现在，我们来创建一个文件夹`microsoft`，里面再添加一个文件`parse.py`：
+
+```py
+def read():
+print('我是 microsoft 文件夹下面的 parse.py 中的 read函数')
+```
+
+如下图所示：
+
+![img](https://kingname-1257411235.cos.ap-chengdu.myqcloud.com/2019-12-28-14-11-17.png)
+
+此时我们在 `main.py`中对它进行调用：
+
+```py
+from microsoft import parse
+ 
+parse.read()
+```
+
+运行效果如下图所示：
+
+![img](https://kingname-1257411235.cos.ap-chengdu.myqcloud.com/2019-12-28-14-12-17.png)
+
+我们也可以用另一种方法：
+
+```py
+from microsoft.parse import read
+ 
+read()
+```
+
+运行效果如下图所示：
+
+![img](https://kingname-1257411235.cos.ap-chengdu.myqcloud.com/2019-12-28-14-13-17.png)
+
+但是，你不能直接导入`microsoft`，如下图所示：
+
+![img](https://kingname-1257411235.cos.ap-chengdu.myqcloud.com/2019-12-28-14-15-35.png)
+
+> 你只能导入一个模块或者导入一个函数或者类，你不能导入一个文件夹
+
+无论你使用的是`import xxx`还是`from xxx.yyy.zzz.www import qqq`，你导入进来的东西，要不就是一个模块(对应到.py 文件的文件名)，或者是某个.py 文件中的函数名、类名、变量名。
+
+无论是`import xxx`还是`from xxx import yyy`，你导入进来的都不能是一个文件夹的名字。
+
+可能有这样一种情况，就是某个函数名与文件的名字相同，例如：
+
+在 `microsoft`文件夹里面有一个`microsoft.py`文件，这个文件里面有一个函数叫做`microsoft`，那么你的代码可以写为：
+
+from microsoft import microsoft`microsoft.microsoft()
+
+但请注意分辨，这里你导入的还是模块，只不过`microsoft.py`文件名与它所在的文件夹名恰好相同而已。
+
+而对于上级目录，可以使用下面的方式导入：
+
+```py
+--|A
+----|E.py
+----|F
+------|G.py
+----|B
+------|C.py
+------|D.py
+
+
+
+# C.py中的代码：
+from . import D     # 导入A.B.D
+from .. import E    # 导入A.E
+from ..F import G    # 导入A.F.G，.. 和 F是连着的，中间没有空格
+# .代表当前目录，..代表上一层目录，...代表上上层目录。
+```
+
+
+
 # Python异常处理
 
 ## 标准异常
