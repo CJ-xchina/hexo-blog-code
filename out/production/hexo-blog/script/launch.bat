@@ -14,4 +14,7 @@ for /L %%i in (1,1,2) do (
 )
 
 echo [%TIMESTAMP%] 批处理程序开始执行 >> %LOG_FILE%
-(hexo algolia && hexo clean && hexo g -d) > temp.txt || call detect.bat
+for /L %%i in (1,1,2) do (
+    (hexo algolia && hexo clean && hexo g -d) > temp.txt || call detect.bat
+)
+
